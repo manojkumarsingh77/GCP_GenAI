@@ -152,14 +152,8 @@ or delete it from the Console under Agent Engine.
 Special Command in case of Authetication issue:
 1. gcloud auth application-default login
 2. gcloud auth application-default set-quota-project project-ef200147-6b7b-4fd8-9bb
-3. gcloud iam service-accounts keys create key.json \
-  --iam-account=YOUR_SA_NAME@project-ef200147-6b7b-4fd8-9bb.iam.gserviceaccount.com
-
-export GOOGLE_APPLICATION_CREDENTIALS=$(pwd)/key.json
-4. echo "PROJECT_ID=$PROJECT_ID"
+3. echo "PROJECT_ID=$PROJECT_ID"
 echo "BUCKET_NAME=$BUCKET_NAME"
 
-5. export PROJECT_ID=project-ef200147-6b7b-4fd8-9bb
+4. export PROJECT_ID=project-ef200147-6b7b-4fd8-9bb
 export BUCKET_NAME=your-actual-bucket-name
-
-6. 
