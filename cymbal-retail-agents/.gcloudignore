@@ -1,0 +1,7 @@
+.env
+data/retail.db
+customer_desk/
+deployment/
+eval/
+tests/
+*.md

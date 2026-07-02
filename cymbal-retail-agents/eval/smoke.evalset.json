@@ -1,0 +1,41 @@
+{
+  "eval_set_id": "cymbal_smoke_suite",
+  "name": "Cymbal Desk smoke suite",
+  "description": "Minimal routing + tool-use checks for the multi-agent system. Run with: adk eval customer_desk eval/smoke.evalset.json",
+  "eval_cases": [
+    {
+      "eval_id": "policy_question_routes_to_rag",
+      "conversation": [
+        {
+          "invocation_id": "inv-1",
+          "user_content": {
+            "role": "user",
+            "parts": [{"text": "How many days do I have to return an item I bought?"}]
+          },
+          "final_response": {
+            "role": "model",
+            "parts": [{"text": "You can return most items within 30 days of delivery; Cymbal Plus members get 60 days."}]
+          }
+        }
+      ],
+      "session_input": {"app_name": "customer_desk", "user_id": "eval_user", "state": {}}
+    },
+    {
+      "eval_id": "order_lookup_routes_to_mcp",
+      "conversation": [
+        {
+          "invocation_id": "inv-2",
+          "user_content": {
+            "role": "user",
+            "parts": [{"text": "What's the status of order ORD-78003?"}]
+          },
+          "final_response": {
+            "role": "model",
+            "parts": [{"text": "Order ORD-78003 is currently IN_TRANSIT, last scanned at Pune Hub, promised by 2026-07-03."}]
+          }
+        }
+      ],
+      "session_input": {"app_name": "customer_desk", "user_id": "eval_user", "state": {}}
+    }
+  ]
+}
